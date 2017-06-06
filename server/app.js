@@ -9,6 +9,7 @@ let Task = require('./models/Task');
 
 let app = express();
 
+app.set('mongodb_uri', (process.env.MONGODB_URI || 'mongodb://localhost/flexiple-tasks'));
 app.set('port', (process.env.FLEXIPLE_TASKS_SERVER_PORT || 3000));
 
 app.use(express.static('public'));
@@ -121,7 +122,7 @@ app.post('/tasks', function (req, res) {
     });
 });
 
-mongoose.connect('mongodb://localhost/flexiple-tasks');
+mongoose.connect(app.get('mongodb_uri'));
 
 let server = app.listen(app.get('port'), function (err) {
     if (err) { return console.log('Error starting web server'); }
