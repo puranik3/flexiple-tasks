@@ -9,6 +9,8 @@ let Task = require('./models/Task');
 
 let app = express();
 
+app.set('port', (process.env.FLEXIPLE_TASKS_SERVER_PORT || 3000));
+
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
@@ -121,7 +123,7 @@ app.post('/tasks', function (req, res) {
 
 mongoose.connect('mongodb://localhost/flexiple-tasks');
 
-let server = app.listen(3000, function (err) {
+let server = app.listen(app.get('port'), function (err) {
     if (err) { return console.log('Error starting web server'); }
 
     console.log('Web server listening on port', server.address().port);
