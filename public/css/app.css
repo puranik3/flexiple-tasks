@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monospace;
+    font-size: 1.2em;
+}
+
+.container {
+    width: 90%;
+    max-width: 960px;
+    margin: 20px auto;
+}
+
+#actions, #tasks {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#actions {
+    display: none;
+}
+
+#actions > li {
+    display: inline-block;
+    border: 1px solid rgb(16, 16, 16);;
+    border-radius: 3px;
+    margin-right: 20px;
+    background-color: rgb(168, 168, 168);
+    text-transform: uppercase;
+}
+
+#actions > li:hover {
+    box-shadow: 1px 1px 1px 1px rgba( 168, 168, 168, 0.7 );
+    background-color: rgb(96, 96, 96 );
+    color: white;
+}
+
+#actions > li > a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 13px;
+    text-decoration: none;
+    color: inherit;
+}
+
+#actions > #btnLogout-container {
+    float: right;
+    margin-right: 0;
+}
+
+#main-view-container {
+    margin-top: 40px;
+}
+
+#tasks > li {
+    overflow: hidden;
+    padding: 10px 20px;
+    border: 1px solid rgb(16, 16, 16);
+    border-radius: 3px;
+    margin: 20px 0;
+    background-color: rgb(236, 230, 236);
+    color: #222;
+}
+
+#tasks > li.private-task {
+    border-color: rgb(64, 64, 64);
+    background-color: rgb(143, 1, 6);
+    color: #ccc;
+}
+
+#tasks .left {
+    float: left;
+    width: 75%;
+}
+
+#tasks .right {
+    float: right;
+    width: 25%;
+}
+
+.form-group {
+    overflow: auto;
+    margin: 30px 0;
+}
+
+.form-group > label {
+    position: relative;
+    top: 1px;
+    float: left;
+    width: 25%;
+    padding: 5px 20px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.form-group > input[type=text], .form-group > input[type=password] {
+    float: left;
+    width: 75%;
+    padding: 5px 2px;
+    border-width: 0;
+    border-bottom: 1px solid #444;
+    outline: none;
+    font-size: 16px;
+}
+
+.form-buttons-group {
+    margin-left: 25%;
+}

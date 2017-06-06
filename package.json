@@ -1,0 +1,22 @@
+{
+  "name": "flexiple-tasks",
+  "version": "1.0.0",
+  "description": "Application that maintain tasks to be done",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Flexiple",
+    "todo app",
+    "tasks app",
+    "tasks"
+  ],
+  "author": "Prashanth Puranik",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.4"
+  }
+}
