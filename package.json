@@ -1,7 +1,7 @@
 {
   "name": "flexiple-tasks",
   "version": "1.0.0",
-  "description": "Application that maintain tasks to be done",
+  "description": "Application that maintains tasks to be done",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

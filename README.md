@@ -1,5 +1,5 @@
 # flexiple-tasks
-Application that maintain tasks to be done
+Application that maintains tasks to be done
 
 ## ToDos
 * Posted before x hours 
