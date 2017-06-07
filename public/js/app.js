@@ -1,5 +1,5 @@
 (function () {
-    var actions = $('#actions');
+    var actions = $('#actions-container');
     
     var btnViewTasks = $( '#btnViewTasks' );
     var btnAddTask = $('#btnAddTask');

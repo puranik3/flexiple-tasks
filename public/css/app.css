@@ -5,12 +5,23 @@
 body {
     font-family: monospace;
     font-size: 1.2em;
+    margin-top: 70px;
 }
 
 .container {
     width: 90%;
     max-width: 960px;
     margin: 20px auto;
+}
+
+#actions-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba( 64, 64, 64, 0.9 );
 }
 
 #actions, #tasks {
@@ -20,7 +31,9 @@ body {
 }
 
 #actions {
-    display: none;
+    max-width: 960px;
+    padding: 10px 0;
+    margin: 0 auto;
 }
 
 #actions > li {
