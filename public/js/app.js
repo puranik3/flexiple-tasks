@@ -4,6 +4,7 @@
     var btnViewTasks = $( '#btnViewTasks' );
     var btnAddTask = $('#btnAddTask');
     var btnLogout = $('#btnLogout');
+    var loggedInUserEmail = $('#logged-in-user-email');
 
     var btnFrmLoginReset = $( '#btn-frm-login-reset');
     var btnFrmLoginSubmit = $('#btn-frm-login-submit');
@@ -65,7 +66,7 @@
                 "password": $( '#login-password' ).val()
             }),
             success: function (response) {
-                flexipleTasks.authService.setToken(response.authToken);
+                flexipleTasks.authService.setToken(response.authToken, response.email);
                 renderView('view-tasks');
             },
             error: function(err) {
@@ -86,6 +87,7 @@
         if (isHide) {
             actions.hide();
         } else {
+            loggedInUserEmail.html(flexipleTasks.authService.getEmail());
             actions.show();
             bindActionsEvents();
         }

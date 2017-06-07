@@ -65,6 +65,13 @@ body {
     margin-right: 0;
 }
 
+#logged-in-user-email {
+    float: right;
+    margin-right: 20px;
+    color: #aaa;
+    vertical-align: bottom;
+}
+
 @media all and (max-width: 640px) {
     #actions > li {
         margin-right: 5px;
