@@ -124,8 +124,21 @@
     }
 
     function renderAddTask() {
+        function generateMinDate() {
+            var today = new Date();
+
+            var day = new String(today.getDate());
+            var month = new String(today.getMonth() + 1 );
+            var year = today.getFullYear();
+
+            if(day.length < 2) { day = '0' + day; }
+            if(month.length < 2) { month = '0' + month; }
+
+            return new String(year + '-' + month + '-' + day);
+        }
+
         renderViewTitle('Add a task');
-        mainViewBody.html( addTaskTpl() );
+        mainViewBody.html( addTaskTpl( { min: generateMinDate() } ) );
         bindAddTaskEvents();
     }
 

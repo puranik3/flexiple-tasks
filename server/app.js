@@ -90,7 +90,7 @@ app.get('/tasks', function (req, res) {
                     userId: res.locals.payload.sub
                 },
                 {
-                    type: 'Public'
+                    type: 'public'
                 }
             ]
         },
@@ -109,7 +109,7 @@ app.post('/tasks', function (req, res) {
         title: body.title,
         deadline: new Date( body.deadline ),
         description: body.description,
-        type: body.type || 'Private',
+        type: body.type || 'private',
         created: new Date,
         userId: res.locals.payload.sub
     });

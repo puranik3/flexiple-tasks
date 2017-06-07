@@ -5,6 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/app.css" rel="stylesheet">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <div class="container">
@@ -46,7 +48,7 @@
         <script id="tasks-template" type="text/template">
             <ul id="tasks">
             <% _.each( tasks, function( task ) { %>
-                <li class="<%= ( task.type === 'Private' ? 'private-task' : '' ) %>">
+                <li class="<%= ( task.type === 'private' ? 'private-task' : '' ) %>">
                     <div class="left">
                         <div>
                             <strong>Title</strong>: <span class="title"><%= _.escape( task.title ) %></span>
@@ -74,20 +76,23 @@
         <script id="add-task-template" type="text/template">
             <form id="frm-add-task">
                 <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" id="title" placeholder="Book air tickets" />
+                    <label for="title" class="required-field">Title</label>
+                    <input type="text" name="title" id="title" placeholder="Book air tickets" required />
                 </div>
                 <div class="form-group">
-                    <label for="deadline">Deadline</label>
-                    <input type="text" name="deadline" id="deadline" />
+                    <label for="deadline" class="required-field">Deadline</label>
+                    <input type="date" name="deadline" id="deadline" min="<%= min %>" required />
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
                     <input type="text" name="description" id="description" placeholder="Check MakeMyTrip offers and SpiceJet sale before deciding" />
                 </div>
                 <div class="form-group">
-                    <label for="task-type">Task type</label>
-                    <input type="text" name="type" id="type" />
+                    <label for="task-type" class="required-field">Task type</label>
+                    <select name="type" id="type" required>
+                        <option value="public">Public</option>
+                        <option value="private">Private</option>
+                    </select>
                 </div>
                 <div class="form-buttons-group">
                     <input type="reset" value="Reset" id="btn-frm-add-task-reset" />
