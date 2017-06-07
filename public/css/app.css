@@ -67,7 +67,7 @@ body {
 
 @media all and (max-width: 640px) {
     #actions > li {
-        margin-right: 10px;
+        margin-right: 5px;
     }
 
     #actions > li > a {
