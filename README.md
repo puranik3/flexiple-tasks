@@ -3,9 +3,9 @@ Application that maintains tasks to be done
 
 ## ToDos
 * Posted before x hours 
-* Form validations
-* Datepicker
+* Date formatting in tasks
 * Filtering based on task type - public/private
+* Input validations on the backend
 
 ## Notes for the Developer
 Assuming Node is setup on your system, the steps to run this app locally are given below.
