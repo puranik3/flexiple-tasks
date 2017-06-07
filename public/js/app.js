@@ -124,21 +124,24 @@
     }
 
     function renderAddTask() {
-        function generateMinDate() {
-            var today = new Date();
+        var today = new Date();
 
-            var day = new String(today.getDate());
-            var month = new String(today.getMonth() + 1 );
-            var year = today.getFullYear();
+        var day = new String(today.getDate());
+        var month = new String(today.getMonth() + 1 );
+        var year = today.getFullYear();
 
-            if(day.length < 2) { day = '0' + day; }
-            if(month.length < 2) { month = '0' + month; }
+        if(day.length < 2) { day = '0' + day; }
+        if (month.length < 2) { month = '0' + month; }
+        
+        var strToday = year + '-' + month + '-' + day;
 
-            return new String(year + '-' + month + '-' + day);
-        }
+        var config = {
+            defaultDate: strToday,
+            min: strToday
+        };
 
         renderViewTitle('Add a task');
-        mainViewBody.html( addTaskTpl( { min: generateMinDate() } ) );
+        mainViewBody.html( addTaskTpl( config ) );
         bindAddTaskEvents();
     }
 
@@ -167,6 +170,12 @@
     }
     
     function bindAddTaskEvents() {
+        var deadline = $('#deadline');
+        deadline.off('keydown');        
+        deadline.on('keydown', function ($event) {
+            $event.preventDefault();
+        });
+
         var frmAddTask = $('#frm-add-task');
         frmAddTask.off('submit');
         frmAddTask.on('submit', frmAddTaskSubmitEventHandler );
