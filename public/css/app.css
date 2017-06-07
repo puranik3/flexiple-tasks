@@ -21,7 +21,6 @@ body {
     left: 0;
     right: 0;
     width: 100%;
-    max-width: 960px;
     background-color: rgba( 64, 64, 64, 0.9 );
 }
 
@@ -32,6 +31,8 @@ body {
 }
 
 #actions {
+    width: 90%;
+    max-width: 960px;
     padding: 10px 0;
     margin: 0 auto;
 }
