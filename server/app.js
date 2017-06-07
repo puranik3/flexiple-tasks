@@ -97,6 +97,11 @@ app.get('/tasks', function (req, res) {
         function (err, results) {
             if (err) { return err; }
 
+            for (let i = 0, now = new Date, createdDate; i < results.length; i++ ) {
+                createdDate = new Date(results[i].created);
+                results[i].hours = Math.floor((now.getTime() - createdDate.getTime()) / (60 * 60 * 1000)); 
+            }
+
             res.json(results);
         }
     );

@@ -6,7 +6,8 @@ var TaskSchema = new mongoose.Schema({
     description: String,
     type: String,
     created: Date,
-    userId: String
+    userId: String,
+    hours: Number
 });
 
 var Task = mongoose.model('Task', TaskSchema);

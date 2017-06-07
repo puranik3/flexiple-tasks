@@ -94,6 +94,10 @@
     }
 
     function bindActionsEvents() {
+        btnViewTasks.off('click');
+        btnAddTask.off('click');
+        btnLogout.off('click');
+
         btnViewTasks.on('click', function () {
             renderViewTasks();
         });
